@@ -1,0 +1,6 @@
+#!/bin/bash
+
+APP_ID="org.shd.$(basename "$1")"
+LAUNCH_COMMAND="shd-launch-tui $@"
+
+exec shd-launch-or-focus "$APP_ID" "$LAUNCH_COMMAND"

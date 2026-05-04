@@ -1,0 +1,91 @@
+{
+  "position": "bottom",
+  "height": 32,
+  "modules-left": [
+    "clock",
+    "custom/separator",
+    "hyprland/workspaces",
+    "custom/separator",
+    "custom/date",
+    "custom/separator",
+    "custom/network",
+  ],
+  "modules-center": [],
+  "modules-right": [
+    "pulseaudio#output",
+    "custom/separator",
+    "pulseaudio#input",
+  ],
+
+  "custom/separator": {
+    "format": "|",
+    "tooltip": false,
+  },
+
+  "hyprland/workspaces": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "active": "",
+    },
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+      "6": [],
+      "7": [],
+      "8": [],
+      "9": [],
+      "10": [],
+    },
+  },
+
+  "clock": {
+    "tooltip": false,
+    "interval": 1,
+    "format": "󰥔  {:%H:%M}",
+  },
+
+  "custom/date": {
+    "tooltip": false,
+    "interval": 60,
+    "exec": "python3 ~/.config/waybar/date.py",
+    "format": "  {text}",
+  },
+
+  "custom/network": {
+    "tooltip": false,
+    "interval": 3,
+    "exec": "bash ~/.config/waybar/network.sh",
+    "return-type": "json",
+    "format": "{icon}  {text}",
+    "format-icons": {
+      "down": "",
+      "up": "",
+      "stale": "",
+      "leak": "",
+      "offline": "󰈂",
+    },
+  },
+
+  "pulseaudio#input": {
+    "tooltip": false,
+    "format": "{format_source}",
+    "format-source": "  {volume}%",
+    "format-source-muted": "  (muted)",
+    "on-click": "shd-launch-or-focus-tui wiremix",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_SOURCE@ 5%+ -l 1",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_SOURCE@ 5%-",
+  },
+
+  "pulseaudio#output": {
+    "tooltip": false,
+    "format": "󰕾  {volume}%",
+    "format-muted": "󰖁  (muted)",
+    "on-click": "shd-launch-or-focus-tui wiremix",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_SINK@ 5%+ -l 1",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_SINK@ 5%-",
+  },
+}
