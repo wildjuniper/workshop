@@ -1,0 +1,32 @@
+{
+  "chat.disableAIFeatures": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 16,
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
+  "git.confirmSync": false,
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font Mono",
+  "terminal.integrated.fontLigatures.enabled": true,
+  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.shellIntegration.decorationsEnabled": "never",
+  "window.autoDetectColorScheme": true,
+  "workbench.browser.showInTitleBar": false,
+  "workbench.preferredDarkColorTheme": "Gruvbox Dark Hard",
+  "workbench.preferredLightColorTheme": "Gruvbox Light Soft",
+  "workbench.startupEditor": "none",
+  "editor.inlayHints.enabled": "offUnlessPressed",
+  "workbench.tree.enableStickyScroll": false,
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+  },
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  },
+  "editor.codeLens": false,
+  "terminal.integrated.initialHint": false,
+  "git.autofetch": true,
+  "workbench.layoutControl.enabled": false,
+  "workbench.openInAgents.enabled": false
+}

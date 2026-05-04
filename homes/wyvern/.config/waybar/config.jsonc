@@ -1,0 +1,123 @@
+{
+  "position": "bottom",
+  "height": 30,
+  "modules-left": [
+    "clock",
+    "custom/separator",
+    "hyprland/workspaces",
+    "custom/separator",
+    "custom/date",
+  ],
+  "modules-center": [],
+  "modules-right": [
+    "pulseaudio#input",
+    "pulseaudio#output",
+    "custom/separator",
+    "bluetooth",
+    "custom/separator",
+    "network",
+    "custom/separator",
+    "battery",
+  ],
+
+  "custom/separator": {
+    "format": "|",
+    "tooltip": false,
+  },
+
+  "hyprland/workspaces": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "active": "",
+    },
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+      "6": [],
+      "7": [],
+      "8": [],
+      "9": [],
+      "10": [],
+    },
+  },
+
+  "clock": {
+    "tooltip": false,
+    "interval": 1,
+    "format": "󰥔  {:%H:%M}",
+  },
+
+  "custom/date": {
+    "tooltip": false,
+    "interval": 60,
+    "exec": "python3 ~/.config/waybar/date.py",
+    "format": "  {text}",
+  },
+
+  "pulseaudio#input": {
+    "tooltip": false,
+    "format": "{format_source}",
+    "format-source": "  {volume}%",
+    "format-source-muted": "  muted",
+    "on-click": "shd-launch-or-focus-tui wiremix",
+  },
+
+  "pulseaudio#output": {
+    "tooltip": false,
+    "format": "󰕾  {volume}%",
+    "format-muted": "󰖁  muted",
+    "on-click": "shd-launch-or-focus-tui wiremix",
+  },
+
+  "bluetooth": {
+    "tooltip": false,
+    "format": "",
+    "format-off": "󰂲",
+    "format-disabled": "󰂲",
+    "format-connected": " 󰋋",
+    "on-click": "shd-launch-bluetooth",
+  },
+
+  "network": {
+    "tooltip": false,
+    "on-click": "shd-launch-wifi",
+    "format-icons": ["󰤟", "󰤢", "󰤨"],
+    "format": "{icon}",
+    "format-wifi": "{icon}",
+    "format-ethernet": "󱎔",
+    "format-disconnected": "󰤯",
+    "format-disabled": "󰤮",
+  },
+
+  "custom/network": {
+    "tooltip": false,
+    "on-click": "shd-launch-wifi",
+    "interval": 3,
+    "exec": "python3 ~/.config/waybar/network.py",
+    "return-type": "json",
+    "format": "{icon}  {text}",
+    "format-icons": {
+      "tunnel-up": "",
+      "tunnel-down": "",
+      "tunnel-leak": "", // can be Ipv4 or ipv6, mention specific in text
+      "disconnected": "󰤯",
+      "wired": "󱎔",
+      "disabled": "󰈂",
+    },
+  },
+
+  "battery": {
+    "tooltip": false,
+    "interval": 60,
+    "format": "{icon} {capacity}%",
+    "format-icons": {
+      "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+      "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
+    },
+    "on-click": "shd-launch-or-focus-tui battop",
+  },
+}
