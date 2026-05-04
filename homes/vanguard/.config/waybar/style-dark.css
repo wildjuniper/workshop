@@ -1,0 +1,6 @@
+@import url("./bar.css");
+
+* {
+  background-color: #333333;
+  color: white;
+}

@@ -1,0 +1,6 @@
+# Get editor completions based on the config schema
+'$schema' = 'https://starship.rs/config-schema.json'
+
+# Add a newline between commands
+# https://github.com/starship/starship/issues/560
+add_newline = false
