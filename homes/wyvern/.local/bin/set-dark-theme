@@ -1,0 +1,6 @@
+#!/bin/bash
+
+ln -sf "$HOME/.config/hypr/dark.conf" "$HOME/.config/hypr/theme.conf" 
+hyprctl reload
+
+gsettings set org.gnome.desktop.interface color-scheme prefer-dark
